@@ -1,5 +1,5 @@
 import { v4 as uuid } from 'uuid';
-import { UserEntity } from '../entity/user.enity.ts'
+import { UserEntity } from '../entity/user.entity';
 
 export class UserValue implements UserEntity {
   name: string;

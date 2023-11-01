@@ -1,5 +1,6 @@
-import { UserRepository } from '/domain/repositories/user/user.repository';
-import { UserValue } from '/domain/dal/user/user.value';
+import { UserValue } from "../../../domain/user/dal/user.value";
+import { UserRepository } from "../../../domain/user/repository/user.repository";
+
 
 export class UserUseCase {
   constructor(private readonly userRepository: UserRepository) {}
@@ -13,5 +14,10 @@ export class UserUseCase {
   public getDetailUSer = async (uuid: string) => {
     const user = await this.userRepository.findUserById(uuid);
     return user;
-  };
+  }
+
+  public async getUsers() {
+    const users = await this.userRepository.listUser();
+    return users;
+  }
 }

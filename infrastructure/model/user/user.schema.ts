@@ -1,7 +1,7 @@
 import { BaseEntity, Column, Entity, PrimaryColumn } from 'typeorm';
 
 @Entity('users')
-export class Process extends BaseEntity {
+export class User extends BaseEntity {
   @PrimaryColumn({ nullable: false })
   name: string;
 

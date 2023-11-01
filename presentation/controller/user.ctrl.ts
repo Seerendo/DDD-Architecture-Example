@@ -1,5 +1,6 @@
 import { Request, Response } from 'express';
-import { UserUseCase } from '../../application/userCase/userUserCase';
+import { UserUseCase } from '../../application/userCase/user/userUserCase';
+
 
 export class UserController {
   constructor(private userUseCase: UserUseCase) {
@@ -16,5 +17,8 @@ export class UserController {
   public async insertCtrl({ body }: Request, res: Response) {
     const user = await this.userUseCase.registerUser(body);
     res.send({ user });
+  }
+
+  public async listUsers(res: Response) {
   }
 }

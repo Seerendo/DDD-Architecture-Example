@@ -1,4 +1,5 @@
 import { DataSource } from "typeorm";
+import { User } from "../model/user/user.schema";
 
 export const AppDataSource = new DataSource({
     type: "mysql",
@@ -10,5 +11,5 @@ export const AppDataSource = new DataSource({
     //Synchronize desactivar en producción
     synchronize: true,
     logging: true,
-    entities: [],
+    entities: [User],
 });
