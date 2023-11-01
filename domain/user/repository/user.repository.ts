@@ -1,7 +1,7 @@
-import { UserEntity } from '../entity/user.entity';
+import { UserValue } from "../dal/user.value";
 
 export interface UserRepository {
-  findUserById(uuid: string): Promise<UserEntity | null>;
-  registerUser(user: UserEntity): Promise<UserEntity | null>;
-  listUser(): Promise<UserEntity[] | null>;
+  findUserById(uuid: string): Promise<UserValue>;
+  registerUser(user: UserValue): Promise<UserValue>;
+  listUser(): Promise<UserValue[]>;
 }

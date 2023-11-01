@@ -1,8 +1,12 @@
 import { BaseEntity, Column, Entity, PrimaryColumn } from 'typeorm';
+import { UserValue } from '../../../domain/user/dal/user.value';
 
 @Entity('users')
-export class User extends BaseEntity {
+export class UserORM extends BaseEntity {
   @PrimaryColumn({ nullable: false })
+  uuid: string;
+
+  @Column()
   name: string;
 
   @Column()
@@ -11,10 +15,18 @@ export class User extends BaseEntity {
   @Column()
   description: string;
 
-  constructor(name: string, email: string, description: string) {
-    super();
-    this.name = name;
-    this.email = email;
-    this.description = description;
+  toUser() : UserValue {
+    let user = new UserValue();
+    user.name = this.name;
+    user.email = this.email;
+    user.description = this.description;
+    return user;
+  }
+
+  fromUser(user: UserValue) {
+    this.name = user.name;
+    this.email = user.email;
+    this.description = user.description;
+    return this;
   }
 }

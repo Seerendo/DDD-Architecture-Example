@@ -7,10 +7,10 @@ export class UserValue implements UserEntity {
   uuid: string;
   description: string;
 
-  constructor({ name, email, description }: { name: string; email: string; description?: string }) {
-    this.uuid = uuid();
-    this.name = name;
-    this.email = email;
-    this.description = description ?? 'default';
+  constructor() {
+    this.uuid = "";
+    this.name = "";
+    this.email = "";
+    this.description = "";
   }
 }
