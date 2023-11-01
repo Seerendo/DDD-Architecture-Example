@@ -3,7 +3,7 @@ import { User } from "../model/user/user.schema";
 
 export const AppDataSource = new DataSource({
     type: "mysql",
-    host: "typescript.clcl2rhzoeva.us-east-1.rds.amazonaws.com",
+    host: "testing.clcl2rhzoeva.us-east-1.rds.amazonaws.com",
     port: 3306,
     username: "admin",
     password: "Roannamo123_",
